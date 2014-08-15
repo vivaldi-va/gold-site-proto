@@ -1,0 +1,42 @@
+$header-height: 60px;
+
+.header {
+
+
+	height: $header-height;
+	margin: 1em 0;
+
+}
+
+.header-siteTitle {
+	float: left;
+	margin: 0;
+	padding: 0 0 0 1em;
+
+	background: url('../images/kultarahaksi_logo.png') no-repeat left center;
+	background-image: url('../images/kultarahaksi_logo.svg');
+	background-size: contain;
+
+	font-size: 40px;
+	font-weight: 100;
+	line-height: $header-height;
+
+	em {
+		font-weight: 400;
+		font-style: normal;
+	}
+}
+
+.header-navigation {
+	float: left;
+
+	.header-navigation-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.header-navigation-item {
+		float: left;
+	}
+}
