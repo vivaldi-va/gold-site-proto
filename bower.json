@@ -1,0 +1,9 @@
+{
+  "name": "gold-site",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.0",
+    "normalize-scss": "~3.0.1"
+  },
+  "devDependencies": {}
+}
