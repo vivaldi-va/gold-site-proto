@@ -6,12 +6,16 @@ $header-height: 60px;
 	height: $header-height;
 	margin: 1em 0;
 
+	& > a {
+		text-decoration: none;
+	}
+
 }
 
 .header-siteTitle {
-	float: left;
-	margin: 0;
-	padding: 0 0 0 1em;
+	max-width: 300px;
+	margin: 0 auto;
+	padding: 0 0 0 1.25em;
 
 	background: url('../images/kultarahaksi_logo.png') no-repeat left center;
 	background-image: url('../images/kultarahaksi_logo.svg');
@@ -20,15 +24,19 @@ $header-height: 60px;
 	font-size: 40px;
 	font-weight: 100;
 	line-height: $header-height;
+	letter-spacing: -0.04em;
 
 	em {
 		font-weight: 400;
 		font-style: normal;
+		letter-spacing: -0.02em;
 	}
 }
 
 .header-navigation {
-	float: left;
+	float: right;
+	line-height: $header-height;
+	color: lighten($color-text, 20%);
 
 	.header-navigation-list {
 		margin: 0;
@@ -38,5 +46,30 @@ $header-height: 60px;
 
 	.header-navigation-item {
 		float: left;
+		padding: 0 0.5em;
+
+		font-weight: 400;
+		text-transform: uppercase;
+
+		&.active {
+			font-size: 1.05em;
+			font-weight: 600;
+		}
+
+		a {
+			text-decoration: none;
+			&:hover, &:active {
+				text-decoration: underline;
+			}
+		}
+
+
+	}
+}
+
+@media screen and (min-width: $breakpoint-tablet) {
+	.header-siteTitle {
+		float: left;
+		margin: 0;
 	}
 }

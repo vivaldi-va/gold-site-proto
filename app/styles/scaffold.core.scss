@@ -18,4 +18,14 @@ body {
 .full-width {
 	float: left;
 	width: 100%;
+
+	& + .full-width {
+		margin: 128px 0 0;
+	}
+
+
+	&.black {
+		background: $black;
+		color: $white;
+	}
 }

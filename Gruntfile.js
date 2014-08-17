@@ -45,14 +45,15 @@ module.exports = function (grunt) {
             gruntfile: {
                 files: ['Gruntfile.js']
             },
-            compass: {
+            sass: {
                 files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
+                tasks: ['sass:dist', 'autoprefixer']
             },
+            /*
             styles: {
-                files: ['<%= config.app %>/styles/{,*/}*.css'],
+                files: ['<%= config.app %>/styles/{,*//*}*.css'],
                 tasks: ['newer:copy:styles', 'autoprefixer']
-            },
+            }*/
             livereload: {
                 options: {
                     livereload: '<%= connect.options.livereload %>'
@@ -329,21 +330,32 @@ module.exports = function (grunt) {
         // Run some tasks in parallel to speed up build process
         concurrent: {
             server: [
-                'compass:server',
-                'copy:styles'
+                'sass'
             ],
             test: [
                 'copy:styles'
             ],
             dist: [
-                'compass',
+                'sass',
                 'copy:styles',
                 'imagemin',
                 'svgmin'
             ]
-        }
+        },
+		sass: {
+			dist: {
+				options: {
+					style: 'expanded'
+				},
+				files: {
+					'.tmp/styles/main.css': '<%= config.app %>/styles/main.scss'
+				}
+			}
+		}
     });
 
+
+	grunt.loadNpmTasks('grunt-contrib-sass');
 
     grunt.registerTask('serve', function (target) {
         if (target === 'dist') {

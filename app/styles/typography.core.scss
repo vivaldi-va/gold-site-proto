@@ -1,0 +1,29 @@
+
+a, a:link, a:visited {
+	color: inherit;
+}
+
+.section-title {
+	margin: 0;
+
+	font-size: 3em;
+	font-weight: 100;
+	line-height: 1.15;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
+}
+
+.info-title {
+
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: 200;
+
+	line-height: 1.15;
+
+	&:first-letter {
+		text-transform: uppercase;
+	}
+}
